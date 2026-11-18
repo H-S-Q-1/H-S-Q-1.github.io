@@ -36,7 +36,7 @@
             font-size: 18px;
             transition: color 0.3s;
         }
-        .navbar a:hover { color: #a3a3a3; } /* 鼠标放上去变灰，主打忧郁 */
+        .navbar a:hover { color: #a3a3a3; }
 
         /* 每个区块 */
         section {
@@ -57,18 +57,18 @@
             object-fit: cover;
             margin-bottom: 25px;
             /* 黑白滤镜，营造忧郁感 */
-            filter: grayscale(80%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
             border: 3px solid rgba(150, 150, 150, 0.5);
             /* 基础阴影 */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            /* 动画：名字叫 float，3秒完成一次，无限循环，缓动效果 */
-            animation: float 3s ease-in-out infinite;
+            /* 动画：名字叫 float，4秒完成一次，无限循环，缓动效果 */
+            animation: float 4s ease-in-out infinite;
         }
 
         /* 定义缓慢上下浮动的动画 */
         @keyframes float {
             0% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-10px) scale(1.02); }
+            50% { transform: translateY(-12px) scale(1.02); }
             100% { transform: translateY(0px) scale(1); }
         }
 
@@ -86,7 +86,7 @@
             margin-bottom: 30px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
             letter-spacing: 1px;
-            color: #cccccc; /* 偏灰的文字 */
+            color: #cccccc;
         }
 
         /* 毛玻璃卡片 */
@@ -124,7 +124,7 @@
 
     <!-- 首页区块 -->
     <section id="home">
-        <!-- 👇 这里我用了一张极其稳定的网图（孤独看海的背影/黑白动漫）。它现在会缓慢上下浮动 -->
+        <!-- 👇 这是一张非常经典的黑白忧郁氛围感网图。绝对能加载出来 -->
         <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=600&auto=format&fit=crop" alt="头像" class="avatar">
         
         <div class="quote">
@@ -157,7 +157,7 @@
         <div class="glass-card">
             <h2>联系方式</h2>
             <p>💻 GitHub：<a href="https://github.com/H-S-Q-1" target="_blank">H-S-Q-1</a></p>
-            <!-- 👇 你的邮箱已经填好了 -->
+            <!-- 👇 你的邮箱已经填好 -->
             <p>📧 邮箱：<a href="mailto:738543978@qq.com">738543978@qq.com</a></p>
         </div>
     </section>
