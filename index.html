@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>韩的个人主页</title>
     <style>
-        /* 让网页滚动更平滑 */
+        /* 平滑滚动效果 */
         html { scroll-behavior: smooth; }
         
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop') no-repeat center center fixed;
+            /* 使用高质感的星空/暗色背景，更衬托光晕头像 */
+            background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
             color: white;
         }
 
-        /* 顶部导航栏固定在屏幕最上方 */
+        /* 顶部导航栏 */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.5); /* 加深背景让文字更清晰 */
+            backdrop-filter: blur(5px);
             padding: 15px 0;
             text-align: center;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .navbar a {
             color: white;
@@ -34,11 +37,11 @@
             font-size: 18px;
             transition: color 0.3s;
         }
-        .navbar a:hover { color: #4CAF50; } /* 鼠标放上去变绿 */
+        .navbar a:hover { color: #00e5ff; } /* 极客蓝高亮 */
 
-        /* 每一个区块的样式 */
+        /* 每个区块 */
         section {
-            min-height: 100vh; /* 每个区块占满一屏高度 */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -47,42 +50,62 @@
             box-sizing: border-box;
         }
 
-        /* 头像样式 */
+        /* 🌟 高级感核心：头像光晕效果 */
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 4px solid white;
             object-fit: cover;
-            margin-bottom: 20px;
-            background-color: #555; /* 如果图片加载失败，显示灰色底色 */
+            margin-bottom: 25px;
+            /* 基础白边 */
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            /* 发光阴影：白色内发光 + 蓝色外发光 */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.4);
+            /* 动画过渡 */
+            transition: all 0.4s ease-in-out;
         }
 
+        /* 鼠标悬停在头像上时：微微放大、旋转、光晕增强 */
+        .avatar:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(0, 229, 255, 0.8);
+        }
+
+        /* 英文名言 */
         .quote {
             text-align: center;
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
         }
 
         /* 毛玻璃卡片 */
         .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 30px;
             max-width: 600px;
             text-align: center;
             line-height: 1.8;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glass-card a {
+            color: #00e5ff; /* 超链接颜色 */
+            text-decoration: none;
+        }
+        .glass-card a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- 导航栏 (注意 href 里的 # 后面跟着对应区块的 id) -->
+    <!-- 导航栏 -->
     <div class="navbar">
         <a href="#home">首页</a>
         <a href="#projects">我的项目</a>
@@ -92,12 +115,13 @@
 
     <!-- 首页区块 -->
     <section id="home">
-        <!-- 把下面的 src 换成你自己的图片链接，或者删掉这段用纯文字 -->
-        <img src="https://i.pinimg.com/736x/8f/c2/33/8fc233e1d8d5c8c6a6e3f4f5f6f7f8f9.jpg" alt="头像" class="avatar">
+        <!-- 👇 这里是一张稳定的动漫头像测试图，如果你想换成自己的，把 src 里的网址换成你上传的 avatar.jpg 即可 -->
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Felix&backgroundColor=transparent" alt="头像" class="avatar">
+        
         <div class="quote">
             every song has a sequel, every dream has a part two<br>
             maybe not today, maybe not tomorrow, but someday.<br>
-            don't look back in anger
+            <span style="color: #00e5ff;">don't look back in anger</span>
         </div>
     </section>
 
@@ -105,8 +129,8 @@
     <section id="projects">
         <div class="glass-card">
             <h2>我的项目</h2>
-            <p>这里以后会展示我的 C 语言和 Python 项目！</p>
-            <p>目前还在努力学习中...</p>
+            <p>目前正在用 Python 写一个学习任务记录工具...</p>
+            <p>代码正在疯狂开发中 🚧</p>
         </div>
     </section>
 
@@ -123,7 +147,8 @@
     <section id="contact">
         <div class="glass-card">
             <h2>联系方式</h2>
-            <p>GitHub: <a href="https://github.com/H-S-Q-1" style="color:#4CAF50;">H-S-Q-1</a></p>
+            <p>💻 GitHub：<a href="https://github.com/H-S-Q-1" target="_blank">H-S-Q-1</a></p>
+            <p>📧 邮箱：<a href="mailto:your_email@qq.com">your_email@qq.com</a> (自己改一下)</p>
         </div>
     </section>
 
