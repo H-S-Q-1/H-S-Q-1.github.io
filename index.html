@@ -1,166 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>韩的个人主页</title>
-    <style>
-        html { scroll-behavior: smooth; }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* 极简星空暗色背景 */
-            background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的工具箱 - 常用小工具合集</title>
+    <meta itemprop="name" content="我的工具箱 - 常用小工具合集" />
+    <meta
+      name="description"
+      content="Collection of handy online tools for developers, with great UX. IT Tools is a free and open-source collection of handy online tools for developers & people working in IT."
+    />
+    <meta
+      itemprop="description"
+      content="Collection of handy online tools for developers, with great UX. IT Tools is a free and open-source collection of handy online tools for developers & people working in IT."
+    />
+    <link rel="author" href="humans.txt" />
+    <link rel="canonical" href="https://it-tools.tech" />
 
-        /* 顶部导航栏 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        .navbar a:hover { color: #a3a3a3; }
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#18a058" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-        /* 每个区块 */
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    <meta property="og:url" content="https://it-tools.tech/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="我的工具箱 - 常用小工具合集" />
+    <meta
+      property="og:description"
+      content="Collection of handy online tools for developers, with great UX. IT Tools is a free and open-source collection of handy online tools for developers & people working in IT."
+    />
+    <meta property="og:image" content="https://it-tools.tech/banner.png?v=2" />
 
-        /* 🌟 忧郁动效头像核心代码 */
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            /* 黑白滤镜，营造忧郁感 */
-            filter: grayscale(100%) contrast(1.2);
-            border: 3px solid rgba(150, 150, 150, 0.5);
-            /* 基础阴影 */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            /* 动画：名字叫 float，4秒完成一次，无限循环，缓动效果 */
-            animation: float 4s ease-in-out infinite;
-        }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ittoolsdottech" />
+    <meta name="twitter:creator" content="@cthmsst" />
 
-        /* 定义缓慢上下浮动的动画 */
-        @keyframes float {
-            0% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-12px) scale(1.02); }
-            100% { transform: translateY(0px) scale(1); }
-        }
-
-        /* 鼠标放上去，短暂恢复色彩，光晕变强 */
-        .avatar:hover {
-            filter: grayscale(0%);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-        }
-
-        /* 英文名言 */
-        .quote {
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            letter-spacing: 1px;
-            color: #cccccc;
-        }
-
-        /* 毛玻璃卡片 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 600px;
-            text-align: center;
-            line-height: 1.8;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-        }
-        
-        .glass-card a {
-            color: #a3a3a3;
-            text-decoration: none;
-        }
-        .glass-card a:hover {
-            text-decoration: underline;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 导航栏 -->
-    <div class="navbar">
-        <a href="#home">首页</a>
-        <a href="#projects">我的项目</a>
-        <a href="#about">关于我</a>
-        <a href="#contact">联系方式</a>
-    </div>
-
-    <!-- 首页区块 -->
-    <section id="home">
-        <!-- 👇 这是一张非常经典的黑白忧郁氛围感网图。绝对能加载出来 -->
-        <img src="lulu.jpeg" alt="头像" class="avatar">
-        
-        <div class="quote">
-            every song has a sequel, every dream has a part two<br>
-            maybe not today, maybe not tomorrow, but someday.<br>
-            <span style="color: #888;">don't look back in anger</span>
-        </div>
-    </section>
-
-    <!-- 我的项目区块 -->
-    <section id="projects">
-        <div class="glass-card">
-            <h2>我的项目</h2>
-            <p>目前正在用 Python 写一个学习任务记录工具...</p>
-            <p>代码正在疯狂开发中 🚧</p>
-        </div>
-    </section>
-
-    <!-- 关于我区块 -->
-    <section id="about">
-        <div class="glass-card">
-            <h2>关于我</h2>
-            <p>大一计算机新生，目标星辰大海。</p>
-            <p>正在学习 C 语言、Python、算法与数据结构。</p>
-        </div>
-    </section>
-
-    <!-- 联系方式区块 -->
-    <section id="contact">
-        <div class="glass-card">
-            <h2>联系方式</h2>
-            <p>💻 GitHub：<a href="https://github.com/H-S-Q-1" target="_blank">H-S-Q-1</a></p>
-            <!-- 👇 你的邮箱已经填好 -->
-            <p>📧 邮箱：<a href="mailto:738543978@qq.com">738543978@qq.com</a></p>
-        </div>
-    </section>
-
-</body>
+    <meta name="twitter:title" content="我的工具箱 - 常用小工具合集" />
+    <meta
+      name="twitter:description"
+      content="Collection of handy online tools for developers, with great UX. IT Tools is a free and open-source collection of handy online tools for developers & people working in IT."
+    />
+    <meta name="twitter:image" content="https://it-tools.tech/banner.png?v=2" />
+    <meta name="twitter:image:alt" content="我的工具箱 - 常用小工具合集" />
+    <script type="module" crossorigin src="/toolbox/assets/index-61293a49.js"></script>
+    <link rel="stylesheet" href="/toolbox/assets/index-c4eecd7b.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+  </body>
 </html>
