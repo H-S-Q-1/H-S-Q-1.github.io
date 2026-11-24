@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b13">
+  <meta name="description" content="像素俱乐部：十二款经典小游戏，打开浏览器就能玩。">
+  <title>像素俱乐部 · PIXEL ARCADE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#games">跳到游戏列表</a>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="像素俱乐部首页">
+      <span class="brand-mark" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="brand-copy">
+        <strong>像素俱乐部</strong>
+        <small>PIXEL ARCADE</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#games">游戏厅</a>
+      <a href="#about">玩法说明</a>
+    </nav>
+
+    <button class="icon-button sound-button" id="soundToggle" type="button" aria-label="关闭音效" aria-pressed="true">
+      <span class="sound-on" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2-3.74v7.48A4.5 4.5 0 0 0 16.5 12Zm-2-7.65v2.06a7 7 0 0 1 0 11.18v2.06a9 9 0 0 0 0-15.3Z"/></svg>
+      </span>
+      <span class="sound-off" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm11.6 3 2.7 2.7-1.4 1.4-2.7-2.7-2.7 2.7-1.4-1.4 2.7-2.7-2.7-2.7 1.4-1.4 2.7 2.7 2.7-2.7 1.4 1.4-2.7 2.7Z"/></svg>
+      </span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span></span> PIXEL ARCADE · SEASON 01</p>
+        <h1><span>把热爱，</span><span class="hero-outline">玩成传奇。</span></h1>
+        <p class="hero-description">十二款经典游戏，全新玩法与视觉。无需下载，随时进入属于你的像素宇宙。</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="randomGame" type="button">
+            <span>随机开一局</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 5 7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6L13 5Z"/></svg>
+          </button>
+          <a class="text-button" href="#games">看看全部游戏 <span>↓</span></a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>12</dt><dd>收录游戏</dd></div>
+          <div><dt>04</dt><dd>全新玩法</dd></div>
+          <div><dt>∞</dt><dd>随时开局</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-showcase">
+        <div class="showcase-ring ring-a" aria-hidden="true"></div>
+        <div class="showcase-ring ring-b" aria-hidden="true"></div>
+        <button class="featured-card" id="featuredCard" type="button" aria-label="游玩今日精选">
+          <span class="featured-topline">
+            <span>FEATURED</span>
+            <span id="featuredIndex">01 / 12</span>
+          </span>
+          <span class="featured-visual">
+            <span class="featured-grid" aria-hidden="true"></span>
+            <span class="featured-icon" id="featuredIcon">2⁴</span>
+            <span class="featured-shine" aria-hidden="true"></span>
+          </span>
+          <span class="featured-info">
+            <small id="featuredCategory">益智挑战</small>
+            <strong id="featuredTitle">2048</strong>
+            <span id="featuredDescription">滑动数字，合并方块，向更高的数字发起挑战。</span>
+          </span>
+          <span class="featured-action">
+            <span>立即游玩</span>
+            <b>↗</b>
+          </span>
+          <span class="featured-progress"><i id="featuredProgress"></i></span>
+        </button>
+        <div class="float-game-tile tile-a" aria-hidden="true">
+          <span>▦</span><small>TETRIS</small>
+        </div>
+        <div class="float-game-tile tile-b" aria-hidden="true">
+          <span>⌁</span><small>SNAKE</small>
+        </div>
+        <div class="float-chip chip-a" aria-hidden="true">
+          <i></i><span>12 WORLDS</span>
+        </div>
+        <div class="float-chip chip-b" aria-hidden="true">
+          <b>∞</b><span>PLAY ANYTIME</span>
+        </div>
+        <div class="showcase-stamp" aria-hidden="true">
+          <span>ARCADE</span>
+          <strong>EDITION 2.0</strong>
+        </div>
+      </div>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>2048</span><i>✦</i><span>TETRIS</span><i>✦</i><span>NEON SNAKE</span><i>✦</i>
+          <span>MINESWEEPER</span><i>✦</i><span>MEMORY</span><i>✦</i><span>WHACK-A-MOLE</span><i>✦</i>
+          <span>TIC-TAC-TOE</span><i>✦</i><span>GOMOKU</span><i>✦</i><span>SPACE RAID</span><i>✦</i>
+          <span>2048</span><i>✦</i><span>TETRIS</span><i>✦</i><span>NEON SNAKE</span><i>✦</i>
+          <span>MINESWEEPER</span><i>✦</i><span>MEMORY</span><i>✦</i><span>WHACK-A-MOLE</span><i>✦</i>
+          <span>TIC-TAC-TOE</span><i>✦</i><span>GOMOKU</span><i>✦</i><span>SPACE RAID</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="games-section" id="games">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> INSERT COIN</p>
+          <h2>选择你的游戏</h2>
+        </div>
+        <p>十二种玩法，从脑力挑战到手速对决。<br>今天想玩哪一局？</p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="按类别筛选游戏">
+        <button class="filter-button active" type="button" data-filter="all">全部游戏</button>
+        <button class="filter-button" type="button" data-filter="arcade">街机动作</button>
+        <button class="filter-button" type="button" data-filter="puzzle">益智挑战</button>
+        <button class="filter-button" type="button" data-filter="strategy">对战棋牌</button>
+      </div>
+
+      <div class="game-grid" id="gameGrid"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-lead">
+        <p class="eyebrow"><span></span> HOW TO PLAY</p>
+        <h2>坐下，投币，<br>然后忘记时间。</h2>
+      </div>
+      <div class="about-features">
+        <article>
+          <span class="feature-number">01</span>
+          <div>
+            <h3>即点即玩</h3>
+            <p>十二款游戏都在浏览器里运行，无需安装客户端，也不会弹出额外窗口。</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-number">02</span>
+          <div>
+            <h3>键盘与触控</h3>
+            <p>电脑上使用方向键或 WASD；手机上直接滑动屏幕或使用屏幕按键。</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-number">03</span>
+          <div>
+            <h3>记录留在本机</h3>
+            <p>最高分会自动保存在当前浏览器。稍后回来，纪录仍然在这里。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <strong>像素俱乐部</strong>
+    </div>
+    <p>一组来自 <span>C-Language-Games</span> 的经典灵感，重新设计为网页游戏。</p>
+    <button class="footer-top" id="backToTop" type="button">回到顶部 ↑</button>
+  </footer>
+
+  <div class="game-modal" id="gameModal" aria-hidden="true">
+    <section class="game-panel" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+      <header class="game-toolbar">
+        <button class="back-button" id="gameBack" type="button" aria-label="返回游戏厅">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m11 5-7 7 7 7 1.4-1.4L6.8 12H20v-2H6.8l5.6-5.6L11 5Z"/></svg>
+          <span>返回</span>
+        </button>
+        <div class="game-heading">
+          <small id="gameCategory">ARCADE</small>
+          <h2 id="gameTitle">游戏名称</h2>
+        </div>
+        <div class="game-actions">
+          <button class="toolbar-button" id="gameRestart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35Z"/></svg>
+            <span>重开</span>
+          </button>
+          <button class="close-game" id="gameClose" type="button" aria-label="关闭游戏">×</button>
+        </div>
+      </header>
+      <div class="game-stats" id="gameStats"></div>
+      <div class="game-stage-wrap">
+        <div class="game-stage" id="gameStage"></div>
+        <div class="game-touch" id="gameTouch" aria-label="触屏控制"></div>
+      </div>
+      <p class="game-hint" id="gameHint"></p>
+      <p class="sr-only" id="gameAnnouncement" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
